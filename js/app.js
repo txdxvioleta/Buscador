@@ -8,24 +8,19 @@ const maximo = document.querySelector('#maximo')
 const puertas = document.querySelector('#puertas')
 const transmision = document.querySelector('#transmision')
 const color = document.querySelector('#color')
-
-//Contenedor para los resultados:
-const resultado = document.querySelector('#resultado')
-
-
-const max = new Date().getFullYear() //Devuelve el año actual
+const max = new Date().getFullYear()  //Devuelve el año actual
 const min = max - 10  //Año actual - 10
-
+const resultado = document.querySelector('#resultado')  //Contenedor para los resultados
 
 
 //Genera un objeto con la búsqueda:
 const datosBusqueda = {
   marca: '',
-  modelo: '',
   year: '',
   puertas: '',
   transmision: '',
-  precio: '',
+  minimo: '',
+  maximo: '',
   color: '',
 }
 
@@ -36,16 +31,36 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 
 //Listeners para los select de la búsqueda:
-//Forma 1:
+
+//?) Forma 1:
 marca.addEventListener('change', e => {
   datosBusqueda.marca = e.target.value
+})
+
+year.addEventListener('change', e => {
+  datosBusqueda.year = e.target.value
+})
+
+minimo.addEventListener('change', e => {
+  datosBusqueda.minimo = e.target.value
+})
+
+maximo.addEventListener('change', e => {
+  datosBusqueda.maximo = e.target.value
+})
+
+puertas.addEventListener('change', e => {
+  datosBusqueda.puertas = e.target.value
+})
+
+transmision.addEventListener('change', e => {
+  datosBusqueda.transmision = e.target.value
+})
+
+color.addEventListener('change', e => {
+  datosBusqueda.color = e.target.value
   console.log(datosBusqueda)
 })
-
-modelo.addEventListener('change', e => {
-  
-})
-
 
 
 //Funciones:
